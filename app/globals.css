@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-outfit), sans-serif;
+  --font-condensed: var(--font-barlow), sans-serif;
+  --font-serif: var(--font-source), serif;
+  --color-pitch: #08110e;
+  --color-canopy: #10211a;
+  --color-panel: #13281f;
+  --color-panel-2: #1b3529;
+  --color-line: #2c4d3c;
+  --color-gold: #e6b325;
+  --color-gold-2: #f3d48a;
+  --color-cream: #f4efe4;
+  --color-ink: #1c1915;
+  --color-muted: #b7c9be;
+  --color-mint: #9ddeb5;
+  --color-foam: #e7f3ec;
+  --color-wicket: #ff5d4a;
+}
+
+html {
+  background: #08110e;
+}
+
+body {
+  min-height: 100%;
+  color: var(--color-foam);
+  font-family: var(--font-outfit), sans-serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgb(38 92 64 / 55%), transparent 55%),
+    linear-gradient(180deg, #10241c 0%, #08110e 32%, #0b1612 100%);
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent 46px,
+    rgb(255 255 255 / 0.015) 46px,
+    rgb(255 255 255 / 0.015) 47px
+  );
+  mask-image: linear-gradient(180deg, rgb(0 0 0 / 0.7), transparent 70%);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
